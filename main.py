@@ -18,7 +18,7 @@ def validate_ip_address(address):
     except ValueError:
         print("\nIP address {} is not valid".format(address))
 
-def checkInt(str):
+def check_int(str):
     if str.isdigit():
         return True
     return False
@@ -35,16 +35,16 @@ def validate_port_range():
 def scan_ports() :
     target = input("\nEnter target example 192.168.1.108:")
     validate_ip_address(target)
-    canInputPort = True
+    can_input_port = True
 
-    while canInputPort:
+    while can_input_port:
         global start, end
         
         start = input("\nEnter starting port example 0:")
         end = input("\nEnter ending port example 100:")
 
-        if checkInt(start) and checkInt(end):
-            canInputPort = False
+        if check_int(start) and check_int(end):
+            can_input_port = False
 
     validate_port_range()
 
